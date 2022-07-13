@@ -45,12 +45,12 @@
 //   console.log(item);})
                                           // Задание №6
  
-// const yourArray = [1, 2, 3, 4, 5,]
-// const yourArrayWithoutDuplicates = [...new Set(yourArray)]
-//  if (yourArray.length !== yourArrayWithoutDuplicates.lenght)
-//    console.log (`true`)
-//  else
-//    console.log (`false`);
+const yourArray = [1, 2, 3, 4, 5,]
+const yourArrayWithoutDuplicates = [...new Set(yourArray)]
+ if (yourArray.length !== yourArrayWithoutDuplicates.length)
+   console.log (`true`)
+ else
+   console.log (`false`);
                     
 //                                           Задание №7
 // let arr = [1, 2, 3, 4, 5];
