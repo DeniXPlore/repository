@@ -94,10 +94,16 @@ body{
 }
 .completed__photo{
     grid-area: ph;
-}
-.completed__foto1{
+    background-size: cover ;
     display: none;
 }
+    .completed__photo.active{
+    display: block;
+    background-size: cover ; 
+    width: 100%;    
+    height: 100%;
+}
+
     
 .completed__logo{
     grid-area: lg;
@@ -157,20 +163,25 @@ body{
     max-width: 689px;
     max-height: 482px;
 }
-/* .completed__navigationitem1{
-    
-} */
+.completed__navigationitem2.active{
+    background-image: url("./icons/Rectangle_7.4.svg");
+    background-repeat: no-repeat;
+
+}
 .completed__navigationitem2{
     padding-right: 17px;
-}
-.completed__navigationitem3{
-    padding-left: 13px;
 }
 .focused{
     cursor: pointer;
 }
-.completed__btn{
+.completed__btn-left{
     background-color: #131313;    
     margin: 0 30px 0 0;    
+    border: none;
+    padding: 0;
+}
+.completed__btn-right{
+    background-color: #131313;    
+    margin: 0 0 0 13px;    
     border: none;
 }
