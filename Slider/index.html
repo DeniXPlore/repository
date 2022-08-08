@@ -33,23 +33,29 @@
           <div class="completed__conditionsgrid">
             <section class="completed__condition1">
               <h2>City:</h2>
-              <p class="completed__pth 1">Rostov-on-Don<br/>LCD admiral</p>
+              <p class="completed__pth1 active">Rostov-on-Don<br>LCD admiral</p>
+              <p class="completed__pth1">Sochi<br>Thieves</p>
+              <p class="completed__pth1">Rostov-on-Don<br>Patriotic</p>
             </section>
             <section class="completed__condition2">
               <h2>apartment area:</h2>
-              <p class="completed__pth 2">81 m2</p>
+              <p class="completed__pth2 active">81 m2</p>
+              <p class="completed__pth2">105 m2</p>
+              <p class="completed__pth2">93 m2</p>
             </section>
             <section class="completed__condition3">
               <h2>Repair time:</h2>
-              <p class="completed__pth 3">3.5 months</p>
+              <p class="completed__pth3 active">3.5 months</p>
+              <p class="completed__pth3">4 months</p>
+              <p class="completed__pth3">3 months</p>
             </section>
             <section class="completed__condition4">
               <h2>Repair Cost:</h2>
-              <p class="completed__pth 4">Upon request</p>
+              <p class="completed__pth4 active">Upon request</p>              
             </section>
           </div>
           <div class="completed__navigation">
-            <button class="completed__btn-left"><img
+            <button id="completed__btn-left"><img
               class="completed__navigationitem1 focused"
               src="./icons/Group_left.svg"
               alt="navigation left"
@@ -69,7 +75,7 @@
               src="./icons/Rectangle_7.3.svg"
               alt="navigation"
             />
-            <button class="completed__btn-right"><img
+            <button id="completed__btn-right"><img
               class="completed__navigationitem3 focused"
               src="./icons/Group_right.svg"
               alt="navigation right"
@@ -77,9 +83,9 @@
           </div>
         </section>
         <ul class="completed__menu">
-          <li class="completed__menuitem1">Rostov-on-Don, Admiral</li>
-          <li class="completed__menuitem2">Sochi Thieves</li>
-          <li class="completed__menuitem3">Rostov-on-Don Patriotic</li>
+          <li class="completed__menuitem1 focused active">Rostov-on-Don, Admiral</li>
+          <li class="completed__menuitem1 focused">Sochi Thieves</li>
+          <li class="completed__menuitem1 focused" >Rostov-on-Don Patriotic</li>
         </ul>
         <div class="completed__photo active"><img          
           src="./images/sunny_livingroom.png"
@@ -94,7 +100,8 @@
           alt="kitchen"/>
         </div>                     
       </div>
-    </main>
-    <script src="./script.js"></script>        
-  </body>    
+    </main>  
+    <script src="./script.js"></script>             
+  </body>  
+  
 </html>

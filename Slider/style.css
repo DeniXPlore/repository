@@ -76,7 +76,7 @@ body{
     list-style-type: none;
 }
 
-.completed__menu>li{
+.completed__menuitem1{
     font-family: 'Yeseva One';
     font-style: normal;
     font-weight: 400;
@@ -86,7 +86,7 @@ body{
     color: rgba(255, 255, 255, 0.3);
     padding-right: 66px;
 }
-.completed__menu>li:active{
+.completed__menuitem1.focused.active{
     color: #E3B873;
     text-decoration: underline;
     text-decoration-color:#E3B873; 
@@ -129,7 +129,10 @@ body{
     text-transform: uppercase;
     color: #E3B873;
 }
-.completed__conditionsgrid>section>p{
+.completed__pth1{
+    display: none;
+}
+.completed__pth1.active,.completed__pth2.active,.completed__pth3.active,.completed__pth4.active{
     padding: 9px 0 0 0;
     margin: 0;
     font-family: 'Nunito Sans';
@@ -137,8 +140,11 @@ body{
     font-weight: 400;
     font-size: 13px;
     line-height: 21px;
-    color: #FFFFFF;
-
+    color: #FFFFFF;    
+    display: block;
+}
+.completed__pth1,.completed__pth2,.completed__pth3,.completed__pth4{
+    display: none;
 }
 .completed__condition1{
     grid-area: cc1;
@@ -174,13 +180,13 @@ body{
 .focused{
     cursor: pointer;
 }
-.completed__btn-left{
+#completed__btn-left{
     background-color: #131313;    
     margin: 0 30px 0 0;    
     border: none;
     padding: 0;
 }
-.completed__btn-right{
+#completed__btn-right{
     background-color: #131313;    
     margin: 0 0 0 13px;    
     border: none;
