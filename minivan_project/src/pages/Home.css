@@ -1,38 +1,45 @@
 .home-container {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)), url("../../images/home-hero.png") no-repeat center center;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)),
+    url("../images/home-hero.png") no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  min-height: 350px;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   color: white;
   padding: 45px 23px;
 }
 
 .home-container h1 {
   font-weight: 700;
-  font-size: 2.25rem;
-  line-height: 42px;
+  font-size: 4.25rem;
+  line-height: 5rem;
 }
 
 .home-container p {
-  line-height: 24px;
+  line-height: 3rem;
+  font-size: 2.25rem;
 }
 
 .home-container a {
   display: inline-block;
   text-align: center;
+  align-self: center;
   text-decoration: none;
-  background-color: #FF8C38;
+  background-color: #ff8c38;
   border: none;
-  width: 100%;
+  width: 30%;
   margin-top: 27px;
-  padding-block: .75rem;
+  padding-block: 0.75rem;
   color: white;
   font-weight: 700;
+  font-size: 2rem;
   border-radius: 5px;
   cursor: pointer;
-  transition: transform .1s ease-in-out;
+  transition: transform 0.1s ease-in-out;
 }
 
 .home-container a:hover {

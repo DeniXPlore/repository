@@ -8,8 +8,10 @@ function App() {
   return (
     <BrowserRouter>
       <header>
-        <Link to='/' className="site-Logo">#VANLIFE</Link>
-        <nav>          
+        <Link to="/" className="site-Logo">
+          #VANLIFE
+        </Link>
+        <nav>
           <Link to="/about">About</Link>
         </nav>
       </header>
