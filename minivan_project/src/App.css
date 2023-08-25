@@ -10,14 +10,15 @@ body {
   font-family: "Inter", sans-serif;
 }
 
-body::-webkit-scrollbar {
+/* body::-webkit-scrollbar {
   display: none;
-}
+} */
 
 body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
 nav > a {
   text-decoration: none;
 }
