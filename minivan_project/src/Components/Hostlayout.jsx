@@ -5,7 +5,8 @@ import "./HostLayout.css";
 function HostLayout() {
   const activeStyles = {
     fontweight: "bold",
-    color: "black",    
+    color: "black",
+    textDecoration: "underline"    
   }
   return (
     <>

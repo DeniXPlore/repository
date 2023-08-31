@@ -71,9 +71,13 @@
   border-radius: 5px;
   text-decoration: underline;
   background-color: transparent;
-  color: #4D4D4D;
+  color: #161616;
 }
 
 i[class*='van-type-'] {
   padding: 7px 14px;
+}
+.van-list-filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
 }

@@ -7,9 +7,7 @@
   text-decoration: none;
 }
 
-/* .van-detail-container .back-button:visited {
-  
-} */
+
 
 .van-detail-container .back-button span {
   text-decoration: underline;
@@ -51,3 +49,5 @@
   color: rgb(255, 255, 255);
   font-size: 1.125rem;
 }
+
+
