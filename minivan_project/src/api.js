@@ -5,7 +5,7 @@ async function getVans() {
       message: "Failed to fetch vans",
       statusText: res.statusText,
       status: res.status,
-    };
+    }
     throw errorMessage
   }
   const data = await res.json();
