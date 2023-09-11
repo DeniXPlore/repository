@@ -1,22 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
+import  {getHostVans} from "../../api";
 import "./HostVans.css";
 
- function HostVans() {
-  const [vans, setVans] = React.useState([]);
+export function loader() {
+  return getHostVans();
+}
 
-  React.useEffect(() => {
-    fetch("/api/host/vans")
-      .then((res) => res.json())
-      .then((data) => setVans(data.vans));
-  }, []);
+function HostVans() {
+  const vans = useLoaderData();
 
   const hostVansEls = vans.map((van) => (
-    <Link
-      to={van.id}
-      key={van.id}
-      className="host-van-link-wrapper"
-    >
+    <Link to={van.id} key={van.id} className="host-van-link-wrapper">
       <div className="host-van-single" key={van.id}>
         <img src={van.imageUrl} alt={`${van.name}`} />
         <div className="host-van-info">
@@ -30,15 +25,11 @@ import "./HostVans.css";
   return (
     <section>
       <h1 className="host-vans-title">Your listed vans</h1>
-      <div className="host-vans-list">
-        {vans.length > 0 ? (
-          <section>{hostVansEls}</section>
-        ) : (
-          <h2>Loading...</h2>
-        )}
+      <div className="host-vans-list">        
+          <section>{hostVansEls}</section>        
       </div>
     </section>
   );
 }
 
-export default HostVans
+export default HostVans;

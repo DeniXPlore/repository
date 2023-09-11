@@ -9,12 +9,12 @@ import "./App.css";
 import About from "./pages/About";
 import Home from "./pages/Home";
 import Vans, { loader as vansLoader } from "./pages/Vans";
-import VanDetail from "./pages/VanDetail";
+import VanDetail, {loader as vanDetailLoader} from "./pages/VanDetail";
 import Dashboard from "./pages/hosts/Dashboard";
 import Reviews from "./pages/hosts/Reviews";
 import Income from "./pages/hosts/Income";
-import HostVans from "./pages/hosts/HostVans";
-import HostVanDetail from "./pages/hosts/HostVanDetail";
+import HostVans, {loader as hostVansLoader} from "./pages/hosts/HostVans";
+import HostVanDetail, {loader as hostVanDetailLoader} from "./pages/hosts/HostVanDetail";
 import HostVanInfo from "./pages/hosts/HostVanInfo";
 import HostVanPricing from "./pages/hosts/HostVanPricing";
 import HostVanPhotos from "./pages/hosts/HostVanPhotos";
@@ -38,7 +38,11 @@ const router = createBrowserRouter(
         loader={vansLoader}
         errorElement={<Error />}
       />
-      <Route path="vans/:id" element={<VanDetail />} />
+      <Route 
+      path="vans/:id" 
+      element={<VanDetail />}
+      loader={vanDetailLoader}
+      />
       <Route path="/host" element={<HostLayout />}>
         <Route index element={<Dashboard />} />
         <Route 
@@ -58,16 +62,12 @@ const router = createBrowserRouter(
         <Route 
         path="vans" 
         element={<HostVans />}
-        loader={async () => {
-          return null
-        } }
+        loader={hostVansLoader}
         />
         <Route 
         path="vans/:id" 
         element={<HostVanDetail />}
-        loader={async () => {
-          return null
-        } }
+        loader={hostVanDetailLoader}
         >
           <Route 
           index 
