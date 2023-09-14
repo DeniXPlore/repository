@@ -1,26 +1,23 @@
 import React from "react";
-import {
-  Link,  
-  Outlet,
-  NavLink,
-  useLoaderData,
-} from "react-router-dom";
+import { Link, Outlet, NavLink, useLoaderData } from "react-router-dom";
 import { getHostVans } from "../../api";
+import {requireAuth} from "../../Utils";
 import "./HostVanDetail.css";
 
-export function loader({ params }) {
+export async function loader({ params }) {
+  await requireAuth();
   return getHostVans(params.id);
 }
 
-function HostVansDetail() {  
+function HostVansDetail() {
   const currentVan = useLoaderData();
 
   const activeStyles = {
     fontweight: "bold",
     color: "black",
     textDecoration: "underline",
-  }; 
- 
+  };
+
   return (
     <section>
       <Link to=".." relative="path" className="back-button">
