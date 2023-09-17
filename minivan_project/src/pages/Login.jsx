@@ -1,9 +1,10 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
-import "./Login.css"
+import { loginUser } from "../api";
+import "./Login.css";
 
-export function loader({request}) {
-  return new URL(request.url).searchParams.get("message")
+export function loader({ request }) {
+  return new URL(request.url).searchParams.get("message");
 }
 
 function Login() {
@@ -11,12 +12,18 @@ function Login() {
     email: "",
     password: "",
   });
-
-  const message = useLoaderData()
+  const [status, setStatus] = React.useState("idle");
+  const [error, setError] = React.useState(null)  
+  const message = useLoaderData();
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(loginFormData);
+    setStatus("submitting");
+    setError(null)
+    loginUser(loginFormData)
+      .then((data) => console.log(data))
+      .catch(err => setError(err))
+      .finally(() => setStatus("idle"));
   }
 
   function handleChange(e) {
@@ -28,9 +35,10 @@ function Login() {
   }
 
   return (
-    <div className="login-conrainer">      
+    <div className="login-conrainer">
       <h1>Sign in to your account</h1>
       {message && <h3 className="red">{message}</h3>}
+      {error && <h3 className="red">{error.message}</h3>}
       <form onSubmit={handleSubmit} className="login-form">
         <input
           name="email"
@@ -46,10 +54,12 @@ function Login() {
           placeholder="Password"
           value={loginFormData.password}
         />
-        <button>Log in</button>
+        <button disabled={status === "submitting"}>
+          {status === "submitting" ? "Logging in..." : "Log in"}
+        </button>
       </form>
     </div>
   );
 }
 
-export default Login
+export default Login;
