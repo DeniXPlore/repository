@@ -4,6 +4,11 @@ import "../../src/index.css";
 
 
 function Header() {
+
+  function fakeLogout(){
+    localStorage.removeItem("loggedin")
+  }
+
   return (
     <header>
       <Link to="/" className="site-Logo">
@@ -31,6 +36,7 @@ function Header() {
         <Link to="login" className="login-link">         
           Login
         </Link>
+        <button onClick={fakeLogout}>X</button>
       </nav>
     </header>
   );
