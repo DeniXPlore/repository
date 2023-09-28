@@ -4,7 +4,7 @@ import {
   useNavigation,
   Form,
   redirect,
-  useActionData,  
+  useActionData,
 } from "react-router-dom";
 import { loginUser } from "../api";
 import "./Login.css";
@@ -16,13 +16,15 @@ export function loader({ request }) {
 export async function action({ request }) {
   const formData = await request.formData();
   const email = formData.get("email");
-  const password = formData.get("password"); 
+  const password = formData.get("password");
+  const pathname =
+    new URL(request.url).searchParams.get("redirectTo") || "/host";
   try {
-    const data = await loginUser({ email, password });    
+    const data = await loginUser({ email, password });
     localStorage.setItem("loggedin", true);
-    const response = redirect("/host")
-    response.body = true 
-    return response    
+    const response = redirect(pathname);
+    response.body = true;
+    return response;
   } catch (err) {
     return err.message;
   }
@@ -31,7 +33,7 @@ export async function action({ request }) {
 function Login() {
   const errorMessage = useActionData();
   const message = useLoaderData();
-  const navigation = useNavigation();  
+  const navigation = useNavigation();
 
   return (
     <div className="login-conrainer">

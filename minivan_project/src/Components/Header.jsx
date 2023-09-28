@@ -36,7 +36,7 @@ function Header() {
         <Link to="login" className="login-link">         
           Login
         </Link>
-        <button onClick={fakeLogout}>X</button>
+        <button onClick={fakeLogout}>Log out</button>
       </nav>
     </header>
   );
