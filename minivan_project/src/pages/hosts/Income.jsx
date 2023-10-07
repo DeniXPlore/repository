@@ -1,5 +1,6 @@
 import React from "react";
-import image from "../../images/income-graph.png"
+import "./Income.css"
+import image from "../../images/income-graph.png";
 
 export default function Income() {
   const transactionsData = [
@@ -8,7 +9,7 @@ export default function Income() {
     { amount: 980, date: "Dec 3, '22", id: "3" },
   ];
 
-  const imageStyle = {width: "50%"}
+  const imageStyle = { width: "50%" };
 
   return (
     <section className="host-income">
@@ -18,7 +19,6 @@ export default function Income() {
       </p>
       <h2>$2,260</h2>
       <img
-        className="graph"
         src={image}
         style={imageStyle}
         alt="Income graph"
