@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, Outlet, NavLink, useLoaderData } from "react-router-dom";
-import { getHostVans } from "../../api";
-import {requireAuth} from "../../Utils";
+import { getHostVans } from "../../../api";
+import { requireAuth } from "../../../Utils";
 import "./HostVanDetail.css";
 
 export async function loader({ params, request }) {

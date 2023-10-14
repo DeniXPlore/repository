@@ -6,7 +6,7 @@ import {
   redirect,
   useActionData,
 } from "react-router-dom";
-import { loginUser } from "../api";
+import { loginUser } from "../../api";
 import "./Login.css";
 
 export function loader({ request }) {

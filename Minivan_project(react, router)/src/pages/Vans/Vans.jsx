@@ -6,7 +6,7 @@ import {
   defer,
   Await,
 } from "react-router-dom";
-import { getVans } from "../api";
+import { getVans } from "../../api";
 import "./Vans.css";
 
 export function loader() {
@@ -14,7 +14,7 @@ export function loader() {
 }
 
 export default function Vans() {
-  const [searchParams, setSearchParams] = useSearchParams();  
+  const [searchParams, setSearchParams] = useSearchParams();
   const dataPromise = useLoaderData();
 
   const typeFilter = searchParams.get("type");
@@ -28,7 +28,7 @@ export default function Vans() {
       }
       return prevParams;
     });
-  } 
+  }
 
   function renderVanElements(vans) {
     const displayedVans = typeFilter

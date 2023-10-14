@@ -1,5 +1,5 @@
 import React from "react";
-import bgImage from "../images/about-hero.png";
+import bgImage from "../../images/about-hero.png";
 import { Link } from "react-router-dom";
 import "./About.css";
 

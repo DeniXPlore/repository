@@ -1,6 +1,6 @@
 import React from "react";
 import "./Income.css"
-import image from "../../images/income-graph.png";
+import image from "../../../images/income-graph.png";
 
 export default function Income() {
   const transactionsData = [

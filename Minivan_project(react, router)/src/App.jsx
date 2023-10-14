@@ -6,27 +6,33 @@ import {
   Route,
 } from "react-router-dom";
 import "./App.css";
-import About from "./pages/About";
-import Home from "./pages/Home";
-import Vans, { loader as vansLoader } from "./pages/Vans";
-import VanDetail, { loader as vanDetailLoader } from "./pages/VanDetail";
-import Dashboard, {loader as dashBoardLoader} from "./pages/hosts/Dashboard";
-import Reviews from "./pages/hosts/Reviews";
-import Income from "./pages/hosts/Income";
-import HostVans, { loader as hostVansLoader } from "./pages/hosts/HostVans";
+import About from "./pages/About/About";
+import Home from "./pages/Home/Home";
+import Vans, { loader as vansLoader } from "./pages/Vans/Vans";
+import VanDetail, {
+  loader as vanDetailLoader,
+} from "./pages/VanDetail/VanDetail";
+import Dashboard, {
+  loader as dashBoardLoader,
+} from "./pages/hosts/Dashboard/Dashboard";
+import Reviews from "./pages/hosts/Reviews/Reviews";
+import Income from "./pages/hosts/Income/Income";
+import HostVans, {
+  loader as hostVansLoader,
+} from "./pages/hosts/HostVans/HostVans";
 import HostVanDetail, {
   loader as hostVanDetailLoader,
-} from "./pages/hosts/HostVanDetail";
-import HostVanInfo from "./pages/hosts/HostVanInfo";
-import HostVanPricing from "./pages/hosts/HostVanPricing";
-import HostVanPhotos from "./pages/hosts/HostVanPhotos";
-import NotFound from "./pages/NotFound";
+} from "./pages/hosts/HostVanDetail/HostVanDetail";
+import HostVanInfo from "./pages/hosts/HostVanInfo/HostVanInfo";
+import HostVanPricing from "./pages/hosts/HostVanInfo/HostVanPricing";
+import HostVanPhotos from "./pages/hosts/HostVanInfo/HostVanPhotos";
+import NotFound from "./pages/NotFound/NotFound";
 import Login, {
   loader as loginLoader,
   action as loginAction,
-} from "./pages/Login";
-import Layout from "./Components/Layout";
-import HostLayout from "./Components/Hostlayout";
+} from "./pages/Login/Login";
+import Layout from "./Components/Layout/Layout";
+import HostLayout from "./Components/Hostlayout/Hostlayout.jsx";
 import Error from "./Components/Error";
 import { requireAuth } from "./Utils";
 
@@ -56,11 +62,7 @@ const router = createBrowserRouter(
         errorElement={<Error />}
       />
       <Route path="/host" element={<HostLayout />}>
-        <Route
-          index
-          element={<Dashboard />}
-          loader={dashBoardLoader}          
-        />
+        <Route index element={<Dashboard />} loader={dashBoardLoader} />
         <Route
           path="income"
           element={<Income />}

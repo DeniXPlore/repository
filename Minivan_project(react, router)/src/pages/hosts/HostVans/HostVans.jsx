@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useLoaderData, defer, Await } from "react-router-dom";
-import { getHostVans } from "../../api";
-import { requireAuth } from "../../Utils";
+import { getHostVans } from "../../../api";
+import { requireAuth } from "../../../Utils";
 import "./HostVans.css";
 
 export async function loader({ request }) {
@@ -12,8 +12,7 @@ export async function loader({ request }) {
 function HostVans() {
   const dataPromise = useLoaderData();
 
-  function renderVanElements(vans) {
-    console.log(vans.name)
+  function renderVanElements(vans) {    
     const hostVansEls = vans.map((van) => (
       <Link to={van.id} key={van.id} className="host-van-link-wrapper">
         <div className="host-van-single" key={van.id}>
