@@ -1,14 +1,20 @@
 .host-vans-list {
   padding-inline: 26px;
 }
+
 .host-van-single {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   background-color: white;
   margin-bottom: 15px;
   padding-block: 18px;
   padding-left: 24px;
 }
+
 .host-van-single > img {
   height: 70px;
   border-radius: 5px;
@@ -24,13 +30,21 @@
 .host-van-info p {
   margin-block: 10px;
 }
+
 .host-dashboard-earnings {
   background-color: #ffead0;
   padding: 37px 26px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
+
 .host-dashboard-earnings > .info > h1 {
   font-size: 36px;
   color: #161616;
@@ -45,6 +59,7 @@
   text-decoration: underline;
   font-weight: bold;
 }
+
 .host-dashboard-earnings > .info > h2 {
   margin: 0;
   font-size: 38px;
@@ -55,17 +70,24 @@
 .host-dashboard-reviews {
   background-color: #ffddb2;
   padding: 25px 26px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
+
 .host-dashboard-reviews > h2 {
   margin: 0;
 }
+
 .host-dashboard-reviews .star {
   color: #ff8c38;
   margin-left: 15px;
   font-size: 25px;
 }
+
 .host-dashboard-reviews p {
   margin-left: 5px;
   font-size: 20px;
@@ -77,13 +99,20 @@
   font-weight: bold;
   color: #161616;
 }
+
 .host-dashboard-vans {
   padding: 38px 26px;
 }
 
 .host-dashboard-vans > .top {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -93,7 +122,5 @@
 
 a {
   text-decoration: unset;
-  color: unset;}
-
-
-
+  color: unset;
+}

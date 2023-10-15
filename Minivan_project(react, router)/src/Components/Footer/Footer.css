@@ -1,10 +1,17 @@
 footer {
   background-color: #161616;
-  color: #AAAAAA;
+  color: #aaaaaa;
   height: 74px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-negative: 0;
   flex-shrink: 0;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   margin-top: auto;
   font-weight: 500;

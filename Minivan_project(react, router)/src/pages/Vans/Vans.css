@@ -3,7 +3,9 @@
 }
 
 .van-list {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr 34px 1fr;
   grid-template-columns: 1fr 1fr;
   justify-items: center;
   gap: 34px;
@@ -34,6 +36,8 @@
   border-radius: 5px;
   background-color: #FFEAD0;
   color: #4D4D4D;
+  -webkit-transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
+  -o-transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
   transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -78,6 +82,9 @@ i[class*='van-type-'] {
   padding: 7px 14px;
 }
 .van-list-filter-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }

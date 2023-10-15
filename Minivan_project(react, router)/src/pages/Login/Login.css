@@ -1,15 +1,27 @@
 .login-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   padding-inline: 27px;
 }
 
 .login-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
-  max-width: 500px;    
+  max-width: 500px;
 }
 
 .login-form > input {
@@ -17,6 +29,7 @@
   height: 40px;
   text-indent: 10px;
   font-family: "Inter", sans-serif;
+  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
   font-weight: 400;
 }
@@ -35,7 +48,7 @@
 }
 
 .login-form > button {
-  background-color: #FF8C38;
+  background-color: #ff8c38;
   border: none;
   border-radius: 6px;
   height: 55px;
@@ -43,7 +56,7 @@
   color: white;
   font-family: "Inter", sans-serif;
 }
-.red{
+.red {
   color: red;
   font-family: "Inter", sans-serif;
 }

@@ -4,7 +4,11 @@
 }
 
 .host-reviews .top-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   margin-bottom: 32px;
 }
@@ -35,6 +39,8 @@
 }
 
 .host-reviews .review .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 

@@ -1,13 +1,31 @@
 .home-container {
+  background: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      from(rgba(0, 0, 0, 0.46)),
+      to(rgba(0, 0, 0, 0.46))
+    ),
+    url("../../images/home-hero.png") no-repeat center center;
+  background: -o-linear-gradient(
+      bottom,
+      rgba(0, 0, 0, 0.46),
+      rgba(0, 0, 0, 0.46)
+    ),
+    url("../../images/home-hero.png") no-repeat center center;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)),
     url("../../images/home-hero.png") no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
   min-height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   color: white;
   padding: 45px 23px;
@@ -27,6 +45,8 @@
 .home-container a {
   display: inline-block;
   text-align: center;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
   align-self: center;
   text-decoration: none;
   background-color: #ff8c38;
@@ -39,9 +59,15 @@
   font-size: 2rem;
   border-radius: 5px;
   cursor: pointer;
+  -webkit-transition: -webkit-transform 0.1s ease-in-out;
+  transition: -webkit-transform 0.1s ease-in-out;
+  -o-transition: transform 0.1s ease-in-out;
   transition: transform 0.1s ease-in-out;
+  transition: transform 0.1s ease-in-out, -webkit-transform 0.1s ease-in-out;
 }
 
 .home-container a:hover {
+  -webkit-transform: translate(1px, 1px);
+  -ms-transform: translate(1px, 1px);
   transform: translate(1px, 1px);
 }

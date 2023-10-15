@@ -1,10 +1,12 @@
 .host-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
 .host-nav a {
   text-decoration: none;
-  color: #4D4D4D;
+  color: #4d4d4d;
   font-weight: 500;
   padding: 5px 20px;
 }
