@@ -12,9 +12,16 @@ body {
   max-width: 480px;
   margin: 0 auto;
   border-radius: 20px;
+  overflow: hidden;
 }
 .main {
   background: #111;
-  height: 200px;
-  border-radius: 20px 20px 0 0;
+  height: 200px;  
+}
+.condition{
+  font-size: 42px;
+  color: #434343;
+  font-weight: bold;
+  padding: 40px 20px;
+  background: #78d2a4 ;
 }
