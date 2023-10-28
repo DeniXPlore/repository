@@ -3,7 +3,8 @@ import "./App.css";
 import Main from "./components/Main";
 
 function App() {
-  const [currentWeather, setCurrentWeather] = useState(false);
+  const [weather, setCurrentWeather] = useState(false);
+  const [location, setLocation] = useState(false);
 
   useEffect(() => {
     fetch(
@@ -11,16 +12,19 @@ function App() {
     )
       .then((data) => data.json())
       .then((data) => {
-        // console.log(data);
-        setTimeout(() => {
-          setCurrentWeather(data.current);
-        }, 4000);
+        console.log(data);
+        setCurrentWeather(data.current);
+        setLocation(data.location);
       });
   }, []);
   return (
     <div className="App">
-      {currentWeather ? (
-        <Main props={currentWeather.condition} />
+      {weather ? (
+        <Main
+          location={location}
+          temperature={weather.temp_c}
+          condition={weather.condition}
+        />
       ) : (
         "Loading..."
       )}
