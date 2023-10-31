@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import Main from "./components/Main";
+import Search from "./components/Search";
 
 function App() {
   const [weather, setCurrentWeather] = useState(false);
@@ -19,6 +20,7 @@ function App() {
   }, []);
   return (
     <div className="App">
+      <Search active={false}/>
       {weather ? (
         <Main
           location={location}
