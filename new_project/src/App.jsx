@@ -6,6 +6,7 @@ import Search from "./components/Search";
 function App() {
   const [weather, setCurrentWeather] = useState(false);
   const [location, setLocation] = useState(false);
+  const [searchBarActive, setSearchBarActive] = useState(false);
 
   useEffect(() => {
     fetch(
@@ -13,19 +14,21 @@ function App() {
     )
       .then((data) => data.json())
       .then((data) => {
-        console.log(data);
         setCurrentWeather(data.current);
         setLocation(data.location);
       });
   }, []);
   return (
     <div className="App">
-      <Search active={false}/>
+      <Search active={searchBarActive} />
       {weather ? (
         <Main
           location={location}
           temperature={weather.temp_c}
           condition={weather.condition}
+          onSearchButtonClick={() => {
+            setSearchBarActive(true);
+          }}
         />
       ) : (
         "Loading..."

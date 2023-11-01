@@ -76,13 +76,12 @@ body {
   position: absolute;
   top: -100px;
   left: 0px;
-  bottom: 0px;
   right: 0px;
   z-index: 2;
   padding: 10px;
   transition: all 0.2 ease-in-out;
 }
-.search-bar.active{
+.search-bar.active {
   top: 0px;
 }
 .search-input {

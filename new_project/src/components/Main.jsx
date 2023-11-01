@@ -1,8 +1,7 @@
-function Main({ condition, temperature, location }) {
-  console.log(condition);
+function Main({ condition, temperature, location, onSearchButtonClick }) {
   return (
     <div className="main">
-      <button className="btn-search">
+      <button className="btn-search" onClick={onSearchButtonClick}>
         <img src="/public/icons/SearchIcon.png" alt="search" />
       </button>
       <div className="temperature">
