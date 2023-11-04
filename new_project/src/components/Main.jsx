@@ -1,8 +1,16 @@
-function Main({ condition, temperature, location, onSearchButtonClick }) {
+import React from "react";
+
+export default function Main({
+  condition,
+  temperature,
+  location,
+  onSearchButtonClick,
+}) {
+  console.log("Condition", condition);
   return (
     <div className="main">
       <button className="btn-search" onClick={onSearchButtonClick}>
-        <img src="/public/icons/SearchIcon.png" alt="search" />
+        <img src="/icons/search.png" alt="Search" />
       </button>
       <div className="temperature">
         {temperature}
@@ -16,15 +24,9 @@ function Main({ condition, temperature, location, onSearchButtonClick }) {
           </div>
         </div>
         <div className="icon">
-          <img
-            className="weather-icon"
-            src={condition.icon}
-            alt="weather icon"
-          />
+          <img src={condition.icon} alt="Weather icon" />
         </div>
       </div>
     </div>
   );
 }
-
-export default Main;

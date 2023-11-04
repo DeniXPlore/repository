@@ -1,47 +1,66 @@
 import React, { useEffect, useState } from "react";
 
-// function Suggestion({id, title}) {
-//   return <li>{title}</li>;  
-// }
-
-function Search({ active }) {
+export default function Search({ active, selectedLocation }) {
   const [term, setTerm] = useState("");
   const [suggestions, setSuggestions] = useState([]);
 
   useEffect(() => {
     if (term !== "") {
       fetch(
-        `http://api.weatherapi.com/v1/current.json?key=7053581a85ad4febb92173004232510&q=${term}&aqi=no`
+        `https://api.weatherapi.com/v1/search.json?key=7053581a85ad4febb92173004232510&q=${term}`
       )
         .then((res) => res.json())
-        .then((data) => console.log(data)
-        // setSuggestions(data));
-       
-    // }
+        .then((data) => {
+          setSuggestions(data);
+        });
+    } else {
+      setSuggestions([]);
+    }
   }, [term]);
+
+  console.log(suggestions);
 
   return (
     <div className={`search-bar ${active ? "active" : ""}`}>
       <input
-        onChange={(e) => {          
+        onChange={(e) => {
           setTerm(e.target.value);
         }}
         type="text"
         className="search-input"
         placeholder="Search your location..."
       />
-      <button className="btn-search">
-        <img src="/Icons/CloseIcon.png" alt="close" />
+      <button className="btn-search btn-search-close">
+        <img src="/icons/close.png" alt="Close search" />
       </button>
-      <div className="suggestions">
-        {/* <ul>
-          {suggestions.map((s) => (
-            <Suggestion title={s.name} />
-          ))}
-        </ul> */}
-      </div>
+      {suggestions.length > 0 && (
+        <div className="suggestions">
+          <ul>
+            {suggestions.map((s) => (
+              <Suggestion
+                key={s.id}
+                region={s.region}
+                id={s.id}
+                title={s.name}
+                onPlaceClick={() => {
+                  selectedLocation(s.lat, s.lon);
+                  setSuggestions([]);
+                }}
+              />
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 }
 
-export default Search;
+function Suggestion({ id, title, region, onPlaceClick }) {
+  return (
+    <li>
+      <button onClick={onPlaceClick}>
+        {title}, <small>{region}</small>
+      </button>
+    </li>
+  );
+}
