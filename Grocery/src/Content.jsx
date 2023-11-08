@@ -1,14 +1,12 @@
-import React from "react";
+import { useState } from "react";
 
-export const Content = () => {
-  const handleNameChange = () => {
-    const names = ["Denis", "Maxim", "Evgeniy"];
-    const int = Math.floor(Math.random() * 3);  
-    return names[int]   
-  };
+const Content = () => {
+  const [items, setItems] = useState([   ])
+
   return (
     <main>
-      <p>Hello, {handleNameChange()}</p>
     </main>
   );
 };
+
+export default Content;
