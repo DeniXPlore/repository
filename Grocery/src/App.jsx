@@ -45,7 +45,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header title="Grocery list" />      
+      <Header title="Grocery list" />
       <AddItem
         newItem={newItem}
         setNewItem={setNewItem}
@@ -55,7 +55,9 @@ function App() {
       <Content
         handleCheck={handleCheck}
         handleDelete={handleDelete}
-        items={items}
+        items={items.filter((item) =>
+          item.item.toLowerCase().includes(search.toLowerCase())
+        )}
       />
       <Footer length={items.length} />
     </div>
