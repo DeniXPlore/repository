@@ -6,13 +6,23 @@ import Footer from "./Footer";
 import { useState, useEffect } from "react";
 
 function App() {
-  const [items, setItems] = useState(JSON.parse(localStorage.getItem("shoppingList")) || []);
+  const API_URL = " http://localhost:5173/itemss";
+  
+  const [items, setItems] = useState([]);
   const [search, setSearch] = useState("");
-  const [newItem, setNewItem] = useState(""); 
+  const [newItem, setNewItem] = useState("");
 
-  useEffect(() => { 
-    localStorage.setItem("shoppingList", JSON.stringify(items))   
-  }, [items]);
+  useEffect(() => {
+    const fetchItems = async () =>{
+      try {
+        const response = await fetch (API_URL);
+        const listItems = await response.json()
+        console.log(listItems)
+        setItems(listItems)
+      }
+      catch (err){console.log(err)}}  
+    (async () => await fetchItems())()  
+  }, []);
 
   const addItem = (item) => {
     const id = items.length ? items[items.length - 1].id + 1 : 1;
