@@ -6,22 +6,31 @@ import Footer from "./Footer";
 import { useState, useEffect } from "react";
 
 function App() {
-  const API_URL = " http://localhost:5173/itemss";
-  
+  const API_URL = " http://localhost:5173/items";
+
   const [items, setItems] = useState([]);
   const [search, setSearch] = useState("");
   const [newItem, setNewItem] = useState("");
+  const [fetchError, setFetchError] = useState(null);
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    const fetchItems = async () =>{
+    const fetchItems = async () => {
       try {
-        const response = await fetch (API_URL);
-        const listItems = await response.json()
-        console.log(listItems)
-        setItems(listItems)
+        const response = await fetch(API_URL);
+        if (!response.ok) throw Error("Did not recieve expected data");
+        const listItems = await response.json();        
+        setItems(listItems);
+        setFetchError(null);
+      } catch (err) {
+        setFetchError(err.message);
+      } finally{
+        setIsLoading(false)
       }
-      catch (err){console.log(err)}}  
-    (async () => await fetchItems())()  
+    };
+    setTimeout(() => {
+      (async () => await fetchItems())();
+    }, 2000)    
   }, []);
 
   const addItem = (item) => {
@@ -59,13 +68,17 @@ function App() {
         handleSubmit={handleSubmit}
       />
       <SearchItem search={search} setSearch={setSearch} />
-      <Content
-        handleCheck={handleCheck}
-        handleDelete={handleDelete}
-        items={items.filter((item) =>
-          item.item.toLowerCase().includes(search.toLowerCase())
-        )}
-      />
+      <main>
+        {isLoading && <p>Loading Items...</p>}
+        {fetchError && <p style={{ color: "red" }}>{`Error: ${fetchError}`}</p>}
+        {!fetchError && !isLoading && <Content
+          handleCheck={handleCheck}
+          handleDelete={handleDelete}
+          items={items.filter((item) =>
+            item.item.toLowerCase().includes(search.toLowerCase())
+          )}
+        />}
+      </main>
       <Footer length={items.length} />
     </div>
   );
