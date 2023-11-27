@@ -13,9 +13,7 @@ html {
 body {
   min-height: 100vh;
   font-family: 'Open Sans', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  display: flex;
+    display: flex;
   background-color: #efefef;
 }
 
@@ -200,9 +198,8 @@ body {
   cursor: pointer;
 }
 
-.Missing h2, .PostPage h2, 
-.Missing p, .PostPage p {
-  margin-bottom: 1rem;
+.Missing p, .PostPage p, .NewPost p {
+  margin-top: 1rem;
 }
 
 .PostPage button {
@@ -210,10 +207,18 @@ body {
   min-width: 48px;
   border-radius: 0.25rem;
   padding: 0.5rem;
-  font-size: 1rem;
-  background-color: red;
+  margin-right: 0.5rem;
+  font-size: 1rem;  
   color: #fff;
   cursor: pointer;
+}
+
+.deleteButton{
+  background-color: red;
+}
+
+.editButton{  
+  background-color: #333;
 }
 
 .statusMsg {
