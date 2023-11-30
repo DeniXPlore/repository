@@ -1,4 +1,4 @@
-import { Falaptop, FaTableAlt, FaMobileAlt } from "react-icons/fa";
+import { FaLaptop, FaTabletAlt, FaMobileAlt } from 'react-icons/fa';
 import useWindowsize from "./hooks/useWindowSize";
 
 const Header = ({ title }) => {
@@ -9,9 +9,9 @@ const Header = ({ title }) => {
       {width < 768 ? (
         <FaMobileAlt />
       ) : width < 992 ? (
-        <FaTableAlt />
+        <FaTabletAlt />
       ) : (
-        <Falaptop />
+        <FaLaptop />
       )}
     </header>
   );

@@ -1,9 +1,9 @@
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 import { useStoreState, useStoreActions } from "easy-peasy";
 import { format } from "date-fns";
 
 const NewPost = () => { 
-  const history = useHistory();
+  // const history = useHistory();
 
   const posts = useStoreState((state) => state.posts)
   const postTitle = useStoreState((state) => state.postTitle)

@@ -1,6 +1,4 @@
-import Header from "./Header";
-import Nav from "./Nav";
-import Footer from "./Footer";
+import Layout from "./Layout";
 import Home from "./Home";
 import NewPost from "./NewPost";
 import PostPage from "./PostPage";
@@ -9,13 +7,40 @@ import About from "./About";
 import Missing from "./Missing";
 import { useEffect } from "react";
 import useAxiosFetch from "./hooks/useAxiosFetch";
-import { Route, Switch } from "react-router-dom";
+import {
+  Route,
+  Routes,
+  RouterProvider,
+  createBrowserRouter,
+  createRoutesFromElements,
+} from "react-router-dom";
 import { useStoreActions } from "easy-peasy";
 
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route
+          index
+          element={<Home />}
+          // isLoading={isLoading}
+          // fetchError={fetchError}
+        />
+        <Route path="/post">
+          <Route index element={<NewPost />} />
+          <Route path="/posts/:id" element={<PostPage />} />
+        </Route>
+        <Route path="/edit/:id" element={<EditPost />} />
+        <Route path="about" element={<About />} />
+        <Route path="*" element={<Missing />} />
+      </Route>
+    </Routes>
+  )
+);
 
 function App() {
   const setPosts = useStoreActions((actions) => actions.setPosts);
-  const { data, fetchError, isLoading } = useAxiosFetch(
+  const { data} = useAxiosFetch(
     "http://localhost:5174"
   );
 
@@ -23,25 +48,7 @@ function App() {
     setPosts(data);
   }, [data, setPosts]);
 
-  return (
-    <div className="App">
-      <Header title="Blog" />      
-        <Nav />
-        <Switch>
-          <Route exact path="/">
-            <Home
-            isLoading={isLoading}
-            fetchError={fetchError}
-            />
-          </Route>
-          <Route exact path="/post" Component={NewPost} />
-          <Route path="/edit/:id" Component={EditPost} />
-          <Route path="/post/:id" Component={PostPage} />
-          <Route path="/about" Component={About} />
-          <Route path="*" Component={Missing} />
-        </Switch>      
-      <Footer />
-    </div>
-  );
+  return <RouterProvider router={router}  />;
 }
+// fetchError={fetchError} isLoading={isLoading}
 export default App;
