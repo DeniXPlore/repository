@@ -20,7 +20,7 @@ function App() {
       try {
         const response = await fetch(API_URL);
         if (!response.ok) throw Error("Did not recieve expected data");
-        const listItems = await response.json();        
+        const listItems = await response.json();              
         setItems(listItems);
         setFetchError(null);
       } catch (err) {
@@ -30,8 +30,8 @@ function App() {
       }
     };
     setTimeout(() => {
-      (async () => await fetchItems())();
-    }, 2000)    
+      (async () => await fetchItems())();     
+    }, 2000)       
   }, []);
 
   const addItem = async (item) => {
