@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { selectPostById, updatePost, deletePost } from "./postSlice"
 import { useParams, useNavigate } from "react-router-dom"
 import { selectAllUsers } from "../users/usersSlice"
-import { findNonSerializableValue } from "@reduxjs/toolkit"
+
 
 
 const EditPostForm = () => {
@@ -27,7 +27,7 @@ const EditPostForm = () => {
 
   const onTitleChanged = e => setTitle(e.target.value)
   const onContentChanged = e => setContent(e.target.value)
-  const onAuthorChanged = e => setUserId(e.target.value)
+  const onAuthorChanged = e => setUserId(Number(e.target.value))
 
  const canSave = [title, content, userId].every(Boolean) && requestStatus === 'idle'
 
@@ -81,7 +81,7 @@ const EditPostForm = () => {
       </select>
       <label htmlFor="postContent">Content:</label>
       <textarea name="postContent" id="postContent" value={content} onChange={onContentChanged}/>
-      <button type="button" onClick={onSavePostClicked} disabled={canSave}>Save Post</button>
+      <button type="button" onClick={onSavePostClicked} disabled={!canSave}>Save Post</button>
       <button className="deleteButton" type="button" onClick={onDeletePostClicked}>Delete post</button>
       </form>
     </section>
