@@ -20,11 +20,9 @@ const Header = () => {
         </div>
         <form className="styles-form">
           <div className="styles-icon">
-            <svg className="icon">
-              <use
-                xlinkHref={`${import.meta.env.PUBLIC_URL}/sprite.svg#search`}
-              />
-            </svg>
+            {/* <svg className="icon">
+              <use xlinkHref={`${process.env.PUBLIC_URL}/sprite.svg#search`} />
+            </svg> */}
           </div>
           <div className="styles-input">
             <input
@@ -36,7 +34,7 @@ const Header = () => {
               value=""
             />
           </div>
-         {false && <div className="styles-box"></div>}
+          {false && <div className="styles-box"></div>}
         </form>
         <div className="styles-account">
           <Link to="/" className="styles-favorites">
