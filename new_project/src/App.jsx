@@ -3,9 +3,14 @@ import Layout from './components/Layout'
 import Home from './features/home/home'
 import Cart from './features/cart/Cart'
 import SideBar from './components/SideBar'
+import { useDispatch } from 'react-redux'
+import { useEffect } from 'react'
 
 function App() {
-  
+   const dispatch = useDispatch()
+   useEffect(() => {
+    
+   }, [])
   return (
     <Routes>
       <Route path='/' element={<Layout/>}>
