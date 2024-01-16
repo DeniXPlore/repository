@@ -5,12 +5,13 @@ import Cart from './features/cart/Cart'
 import SideBar from './components/SideBar'
 import { useDispatch } from 'react-redux'
 import { useEffect } from 'react'
+import { getCategories } from './features/category/categoriesSlice'
 
 function App() {
    const dispatch = useDispatch()
    useEffect(() => {
-    
-   }, [])
+    dispatch(getCategories())
+   }, [dispatch])
   return (
     <Routes>
       <Route path='/' element={<Layout/>}>

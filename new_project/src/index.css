@@ -310,3 +310,84 @@ input {
   height: 50px;
   width: 50px;
 }
+
+.styles-sidebar {
+  width: 304px;
+  padding: 24px;
+  height: 423px;
+  display: flex;
+  flex-direction: column;
+}
+
+.styles-title {
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.styles-menu {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+}
+
+.styles-link {
+  color: var(--dark-sea);
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: capitalize;
+}
+
+.styles-link:hover {
+  color: var(--white);
+}
+
+.styles-link.active {
+  color: var(--violet);
+}
+
+.styles-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 24px;
+}
+
+.logo {
+  width: 61px;
+}
+
+.logo a {
+  height: 100%;
+}
+
+.rights {
+  color: var(--dark-sea);
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.rights a {
+  color: var(--violet);
+}
+
+.socials {
+  display: flex;
+  gap: 15px;
+}
+
+.socials svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--dark-sea);
+}
+
+.socials svg:hover {
+  fill: var(--violet);
+}
