@@ -1,28 +1,30 @@
-import { Route, Routes } from 'react-router-dom'
-import Layout from './components/Layout'
-import Home from './features/home/home'
-import Cart from './features/cart/Cart'
-import SideBar from './components/SideBar'
-import { useDispatch } from 'react-redux'
-import { useEffect } from 'react'
-import { getCategories } from './features/category/categoriesSlice'
+import { Route, Routes } from "react-router-dom";
+import Layout from "./components/Layout";
+import Home from "./components/Home";
+import Cart from "./components/Cart";
+import SideBar from "./components/SideBar";
+import Products from "./components/Products";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { getCategories } from "./features/category/categoriesSlice";
+import { getProducts } from "./features/products/productsSlice";
 
 function App() {
-   const dispatch = useDispatch()
-   useEffect(() => {
-    dispatch(getCategories())
-   }, [dispatch])
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getCategories());
+    dispatch(getProducts());
+  }, [dispatch]);
   return (
     <Routes>
-      <Route path='/' element={<Layout/>}>
-        <Route index element={<Home/>}/>
-        <Route path='/cart' element={<Cart/>}/>
-        <Route path='/categories/:id' element={<SideBar/>}/>
-        
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/categories/:id" element={<SideBar />} />
+        <Route path="/products/:id" element={<Products />} />
       </Route>
-
-    </Routes> 
-  )
+    </Routes>
+  );
 }
 
-export default App
+export default App;

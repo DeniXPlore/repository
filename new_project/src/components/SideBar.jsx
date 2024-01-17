@@ -3,23 +3,22 @@ import { NavLink } from "react-router-dom";
 
 const SideBar = () => {
   const { list } = useSelector(({ categories }) => categories);
-  console.log(list);
-  return (
+    return (
     <section className="sidebar">
-      <div className="title">CATEGORIES</div>
+      <div className="sidebar-title">CATEGORIES :</div>
       <nav>
-        <ul className="menu">
+        <ul className="sidebar-menu">
           {list.map(({ id, name }) => (
             <li key={id}>
               <NavLink   className={({ isActive }) =>
-                  isActive ? 'styles-link active' : 'styles-link'}
+                  isActive ? 'sidebar-link active' : 'sidebar-link'}
                   
               to={`/categories/${id}`}>{name}</NavLink>
             </li>
           ))}
         </ul>
       </nav>
-      <div className="styles-footer">
+      <div className="sidebar-footer">
         <a href="/help" className="link" target="_blank">
           Help
         </a>
