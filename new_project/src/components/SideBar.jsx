@@ -8,7 +8,7 @@ const SideBar = () => {
       <div className="sidebar-title">CATEGORIES :</div>
       <nav>
         <ul className="sidebar-menu">
-          {list.map(({ id, name }) => (
+          {list.slice(0,9).map(({ id, name }) => (
             <li key={id}>
               <NavLink   className={({ isActive }) =>
                   isActive ? 'sidebar-link active' : 'sidebar-link'}

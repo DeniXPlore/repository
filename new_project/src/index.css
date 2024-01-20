@@ -471,7 +471,7 @@ input {
   height: 170px;
   left: -25px;
   bottom: 74px;
-  background: url(../images/shoe.png) no-repeat center/contain;
+  background: url(images/shoe.png) no-repeat center/contain;
 }
 
 .poster-left:after {
@@ -479,7 +479,7 @@ input {
   height: 151px;
   right: -25px;
   bottom: -25px;
-  background: url(../images/devices.png) no-repeat center/contain;
+  background: url(images/devices.png) no-repeat center/contain;
 }
 
 .poster-content {
