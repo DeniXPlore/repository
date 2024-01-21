@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const BASE_URL = "https://api.escuelajs.co/api/v1";
+export const BASE_URL = "https://api.escuelajs.co/api/v1";
 
 export const getProducts = createAsyncThunk(
   "products/getProducts",

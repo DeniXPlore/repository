@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getCategories } from "./features/category/categoriesSlice";
 import { getProducts } from "./features/products/productsSlice";
+import SingleProduct from "./components/SingleProduct";
 
 function App() {
   const dispatch = useDispatch();
@@ -21,7 +22,8 @@ function App() {
         <Route index element={<Home />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/categories/:id" element={<SideBar />} />
-        <Route path="/products/:id" element={<Products />} />
+        <Route path="/products/" element={<Products />} />
+        <Route path="/products/:id" element={<SingleProduct />} />
       </Route>
     </Routes>
   );
