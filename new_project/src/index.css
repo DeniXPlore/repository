@@ -685,3 +685,136 @@ input {
   line-height: 24px;
   margin-top: 20px;
 }
+
+.product {
+  display: flex;
+  flex-grow: 1;
+  /* flex-direction: column; */
+  max-width: calc(100% - 324px);
+  padding: 24px;
+  column-gap: 32px;
+  color: var(--light);
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-images {
+  display: flex;
+  gap: 20px;
+}
+
+.product-current {
+  width: 375px;
+  height: 375px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 6px;
+}
+
+.images-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+
+.product-image {
+  width: 90px;
+  height: 90px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.product-title {
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 500;
+}
+
+.product-price {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  margin: 10px 0 20px 0;
+}
+
+.product-color,
+.product-sizes {
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: capitalize;
+  display: flex;
+  column-gap: 16px;
+  align-items: center;
+}
+
+.product-sizes {
+  margin: 16px 0;
+}
+
+.product-color span,
+.product-sizes span {
+  font-size: 14px;
+  line-height: 17px;
+  color: var(--dark-sea);
+}
+
+.product-list {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+}
+
+.product-size {
+  padding: 4px 8px;
+  border-radius: 8px;
+  background: var(--bg);
+  cursor: pointer;
+}
+
+.product-size:hover,
+.product-size.active {
+  background: var(--violet);
+}
+
+.product-description {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: var(--grey);
+}
+
+.product-actions {
+  margin-top: 20px;
+  display: flex;
+  column-gap: 10px;
+}
+
+.product-favourite {
+  background: var(--dark-sea);
+  border-radius: 6px;
+}
+
+.product-favourite:hover {
+  background: #7a8690;
+}
+
+.product-bottom {
+  display: flex;  ;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 10px;
+  line-height: 12px;
+  color: var(--dark-sea);
+  margin-top: auto;
+}
+
+.product-add:disabled {
+  cursor: not-allowed;
+  background: var(--bg);}
