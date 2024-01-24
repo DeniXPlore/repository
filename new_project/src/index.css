@@ -707,7 +707,7 @@ input {
 }
 
 .product-current {
-  width: 375px;
+  width: 575px;
   height: 375px;
   background-position: center;
   background-repeat: no-repeat;
@@ -808,7 +808,8 @@ input {
 .product-bottom {
   display: flex;  ;
   align-items: center;
-  justify-content: space-between;
+  justify-content: start;
+  gap: 1rem;
   font-size: 10px;
   line-height: 12px;
   color: var(--dark-sea);
