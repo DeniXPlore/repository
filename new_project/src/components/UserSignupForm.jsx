@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const UserSignupForm = () => {
+const UserSignupForm = ({closeForm}) => {
   const [values, setValues] = useState({
     name: "",
     email:"",
@@ -11,7 +11,7 @@ const UserSignupForm = () => {
   }
   return (
     <div className="user-wrapper">
-      <div className="user-close">svg icon</div>
+      <div className="user-close"onClick={closeForm}>svg icon</div>
       <div className="user-title">Sigh Up</div>
       <form action="" className="user-form">
         <div className="user-group">
@@ -19,7 +19,7 @@ const UserSignupForm = () => {
             type="email"
             name="email"
             placeholder="Your email"
-            value="values.email"
+            value={values.email}
             autoComplete="off"
             onChange={handleChange}
             required
@@ -28,7 +28,7 @@ const UserSignupForm = () => {
             type="name"
             name="name"
             placeholder="Your name"
-            value="values.name"
+            value={values.name}
             autoComplete="off"
             onChange={handleChange}
             required
@@ -37,23 +37,23 @@ const UserSignupForm = () => {
             type="password"
             name="password"
             placeholder="Your password"
-            value="values.password"
+            value={values.password}
             autoComplete="off"
             onChange={handleChange}
-            required
+            // required
           />
           <input
             type="avatar"
             name="avatar"
             placeholder="Your avatar"
-            value="values.avatar"
+            value={values.avatar}
             autoComplete="off"
             onChange={handleChange}
             required
           />
         </div>
         <div className="user-link">I already have an account</div>
-        <button type="submit" className="user-submit"></button>
+        <button type="submit" className="user-submit">submit</button>
       </form>
     </div>
   );

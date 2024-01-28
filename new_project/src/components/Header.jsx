@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
 import logo from "../images/logo.svg";
 import avatar from "../images/avatar.jpg";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleForm } from "../features/user/userSlice";
 
 const Header = () => {
+  const dispatch = useDispatch()
   const {currentUser} = useSelector(({user}) => user )
   const handleClick = () => {
-    if(!currentUser) return
+    if(!currentUser) dispatch(toggleForm(true))
   }
   return (
     <div className="styles-header">

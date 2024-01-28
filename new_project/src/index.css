@@ -819,3 +819,86 @@ input {
 .product-add:disabled {
   cursor: not-allowed;
   background: var(--bg);}
+
+  .user-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(33, 33, 35, 0.8);
+    z-index: 98;
+  }
+  
+  .user-wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: var(--dark);
+    width: 320px;
+    height: 100vh;
+    z-index: 99;
+    padding: 24px;
+  }
+  
+  .user-title {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: var(--light);
+    text-align: center;
+  }
+  
+  .user-form {
+    margin-top: 24px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    row-gap: 16px;
+  }
+  .user-group{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .user-group input {
+    width: 100%;
+    background: #212123;
+    border-radius: 8px;
+    color: var(--light);
+    padding: 12px 24px;
+      }
+  
+  .user-submit {
+    font-weight: 500;
+    line-height: 20px;
+  }
+  
+  .user-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 9;
+    cursor: pointer;
+  }
+  
+  .user-close svg {
+    width: 20px;
+    height: 20px;
+    stroke: var(--dark-sea);
+  }
+  
+  .user-close:hover svg {
+    stroke: #fff;
+  }
+  
+  .user-link {
+    font-size: 13px;
+    color: var(--dark-sea);
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .user-link:hover {
+    color: var(--light);
+  }

@@ -17,7 +17,7 @@ export const createUser = createAsyncThunk(
 );
 
 const initialState = {
- currentUser: {},
+ currentUser: null,
   isLoading: false,
   cart:[],
   formType: "signup",
@@ -38,7 +38,9 @@ const userSlice = createSlice({
       } else newCart.push({...payload, quantity: 1})
       state.cart = newCart
     },
-    
+    toggleForm: (state, {payload}) => {
+      state.showForm = payload
+    }
   },
   extraReducers: (builder) => {
     builder
@@ -54,5 +56,5 @@ const userSlice = createSlice({
   },
 });
 
-export const {addItemToCart} = userSlice.actions
+export const {addItemToCart, toggleForm} = userSlice.actions
 export default userSlice.reducer;
