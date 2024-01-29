@@ -1,15 +1,29 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../images/logo.svg";
 import avatar from "../images/avatar.jpg";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleForm } from "../features/user/userSlice";
+import { useState } from "react";
+
 
 const Header = () => {
-  const dispatch = useDispatch()
-  const {currentUser} = useSelector(({user}) => user )
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { currentUser } = useSelector(({ user }) => user);
+
   const handleClick = () => {
-    if(!currentUser) dispatch(toggleForm(true))
-  }
+    if (!currentUser) dispatch(toggleForm(true))
+    else navigate("/profile")
+  };
+  const [values, setValues] = useState({ name: "Guest", avatar: avatar });
+
+  const useEffect =
+    (() => {
+      if (!currentUser) return;
+      setValues(currentUser);
+    },
+    [currentUser]);
+
   return (
     <div className="styles-header">
       <div className="styles-logo">
@@ -21,9 +35,9 @@ const Header = () => {
         <div className="styles-user" onClick={handleClick}>
           <div
             className="styles-avatar"
-            style={{ backgroundImage: `url(${avatar})` }}
+            style={{ backgroundImage: `url(${values.avatar})` }}
           />
-          <div className="styles-username">Guest</div>
+          <div className="styles-username">{values.name}</div>
         </div>
         <form className="styles-form">
           <div className="styles-icon">

@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import { getCategories } from "./features/category/categoriesSlice";
 import { getProducts } from "./features/products/productsSlice";
 import SingleProduct from "./components/SingleProduct";
+import Profile from "./components/Profile";
 
 function App() {
   const dispatch = useDispatch();
@@ -24,6 +25,7 @@ function App() {
         <Route path="/categories/:id" element={<SideBar />} />
         <Route path="/products/" element={<Products />} />
         <Route path="/products/:id" element={<SingleProduct />} />
+        <Route path="/profile" element={<Profile />} />
       </Route>
     </Routes>
   );

@@ -1,14 +1,12 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { createUser } from "../features/user/userSlice";
+import { loginUser } from "../features/user/userSlice";
 
 const UserSignupForm = ({ closeForm, toggleCurrentFormType }) => {
   const dispatch = useDispatch();
   const [values, setValues] = useState({
-    name: "",
     email: "",
     password: "",
-    avatar: "",
   });
   const handleChange = ({ targe: { value, name } }) => {
     setValues({ ...values, [name]: value });
@@ -18,7 +16,7 @@ const UserSignupForm = ({ closeForm, toggleCurrentFormType }) => {
     e.preventDefault();
     const isNotEmpty = Object.values(values).every((val) => val);
     if (!isNotEmpty) return;
-    dispatch(createUser(values));
+    dispatch(loginUser(values));
     closeForm();
   };
 
@@ -40,15 +38,6 @@ const UserSignupForm = ({ closeForm, toggleCurrentFormType }) => {
             required
           />
           <input
-            type="name"
-            name="name"
-            placeholder="Your name"
-            value={values.name}
-            autoComplete="off"
-            onChange={handleChange}
-            required
-          />
-          <input
             type="password"
             name="password"
             placeholder="Your password"
@@ -57,19 +46,10 @@ const UserSignupForm = ({ closeForm, toggleCurrentFormType }) => {
             onChange={handleChange}
             required
           />
-          <input
-            type="avatar"
-            name="avatar"
-            placeholder="Your avatar"
-            value={values.avatar}
-            autoComplete="off"
-            onChange={handleChange}
-            required
-          />
         </div>
-        <div className="user-link" onClick={() => toggleCurrentFormType('login')}>I already have an account</div>
+        <div className="user-link" onClick={() => toggleCurrentFormType('signup')}>Create an account</div>
         <button type="submit" className="user-submit">
-          submit
+          Login
         </button>
       </form>
     </div>
