@@ -902,3 +902,26 @@ input {
   .user-link:hover {
     color: var(--light);
   }
+
+  .profile {
+    flex-grow: 1;
+    padding: 24px;
+  }
+  
+  .user-form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+  
+  .user-group {
+    width: 100%;
+    background: #212123;
+    border-radius: 8px;
+    color: var(--light);
+    padding: 12px 24px;
+  }
+  
+  .user-group input {
+    width: 100%;
+  }

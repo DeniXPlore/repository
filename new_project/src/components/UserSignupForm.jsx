@@ -10,7 +10,7 @@ const UserSignupForm = ({ closeForm, toggleCurrentFormType }) => {
     password: "",
     avatar: "",
   });
-  const handleChange = ({ targe: { value, name } }) => {
+  const handleChange = ({ target: { value, name } }) => {
     setValues({ ...values, [name]: value });
   };
 
@@ -64,7 +64,7 @@ const UserSignupForm = ({ closeForm, toggleCurrentFormType }) => {
             value={values.avatar}
             autoComplete="off"
             onChange={handleChange}
-            required
+            // required
           />
         </div>
         <div className="user-link" onClick={() => toggleCurrentFormType('login')}>I already have an account</div>

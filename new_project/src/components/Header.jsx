@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import logo from "../images/logo.svg";
 import avatar from "../images/avatar.jpg";
 import { useDispatch, useSelector } from "react-redux";
+import {useGetProductsQuery} from '../features/api/apiSlice'
 import { toggleForm } from "../features/user/userSlice";
 import { useState } from "react";
 
@@ -9,6 +10,7 @@ import { useState } from "react";
 const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [searchValue, setSearchValue] = useState("")
   const { currentUser } = useSelector(({ user }) => user);
 
   const handleClick = () => {
@@ -16,6 +18,12 @@ const Header = () => {
     else navigate("/profile")
   };
   const [values, setValues] = useState({ name: "Guest", avatar: avatar });
+
+  const {data, isLoading} = useGetProductsQuery({title: searchValue});
+
+  const handleSearch = ({target: {value}})  => {
+    setSearchValue(value)
+  }
 
   const useEffect =
     (() => {
@@ -51,7 +59,7 @@ const Header = () => {
               name="search"
               placeholder="Search for anything..."
               autoCapitalize="off"
-              onChange={() => {}}
+              onChange={handleSearch}
               value=""
             />
           </div>

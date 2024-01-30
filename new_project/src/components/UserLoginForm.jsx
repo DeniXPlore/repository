@@ -8,7 +8,7 @@ const UserSignupForm = ({ closeForm, toggleCurrentFormType }) => {
     email: "",
     password: "",
   });
-  const handleChange = ({ targe: { value, name } }) => {
+  const handleChange = ({ target: { value, name } }) => {
     setValues({ ...values, [name]: value });
   };
 

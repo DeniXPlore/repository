@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateUser } from "../features/user/userSlice";
 
@@ -11,6 +11,12 @@ const Profile = () => {
     password: "",
     avatar: "",
   });
+
+  useEffect(() => {
+    if(!currentUser) return
+    setValues(currentUser)
+  },[currentUser])
+  
   const handleChange = ({ targe: { value, name } }) => {
     setValues({ ...values, [name]: value });
   };
@@ -66,6 +72,7 @@ const Profile = () => {
               required
             />
           </div>
+          <button type="submit" className="user-submit">Update</button>
         </form>
       )}
     </section>
