@@ -10,6 +10,7 @@ import { getCategories } from "./features/category/categoriesSlice";
 import { getProducts } from "./features/products/productsSlice";
 import SingleProduct from "./components/SingleProduct";
 import Profile from "./components/Profile";
+import SingleCategory from "./components/SingleCategory";
 
 function App() {
   const dispatch = useDispatch();
@@ -22,7 +23,7 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/categories/:id" element={<SideBar />} />
+        <Route path="/categories/:id" element={<SingleCategory />} />
         <Route path="/products/" element={<Products />} />
         <Route path="/products/:id" element={<SingleProduct />} />
         <Route path="/profile" element={<Profile />} />

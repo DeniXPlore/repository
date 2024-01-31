@@ -60,10 +60,21 @@ const Header = () => {
               placeholder="Search for anything..."
               autoCapitalize="off"
               onChange={handleSearch}
-              value=""
+              value={searchValue}
             />
           </div>
-          {false && <div className="styles-box"></div>}
+          {searchValue && <div className="styles-box">
+            {isLoading ? 'Loading' : !data.length ? "no results" :
+              data.map(({ title, images, id}) => {
+                return (
+                  <Link to={`/products/${id}`} className="styles-item" key={id} onClick={() => setSearchValue("")}>
+                    <div className="styles-image" style={{backgroundImage: `url(${images[0]})`}} />
+                    <div className="styles-title">{title}</div>
+                  </Link>
+                )
+              }
+            )}
+            </div>}
         </form>
         <div className="styles-account">
           <Link to="/" className="styles-favorites">
