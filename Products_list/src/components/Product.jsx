@@ -1,28 +1,31 @@
 import { useEffect } from "react";
-import { Card, Button } from "react-bootstrap";
+import { Card, Button} from "react-bootstrap";
+import Alert from "react-bootstrap/Alert"
 import { useDispatch, useSelector } from "react-redux";
 import { add } from "../features/cartSlice";
 import { getProducts } from "../features/productSlice";
+import StatusCode from "../../utils/StatusCode"
+
 
 const Product = () => {
   const dispatch = useDispatch();
-  const { data: products, status } = useSelector((state) => state.products);
+  const { data: products, status} = useSelector((state) => state.products);
 
   useEffect(() => {
     dispatch(getProducts());
   }, []);
 
-  if(status === 'loading'){
+  if(status === StatusCode.LOADING){
     return <p>Loading...</p>
   }
-  if(status === 'error'){
-    return <p>something went wrong</p>
+  if(status === StatusCode.ERROR){
+    return <Alert key="danger" variant="danger">Something went wrong</Alert>
   }
 
   const addToCart = (product) => {
     dispatch(add(product));
   };
-
+ console.log(products)
   const cards = products.map((product) => (
     <div className="col-md-3" style={{ marginBottom: "1rem" }} key={product.id}>
       <Card key={product.id} className="h-100">
@@ -51,8 +54,7 @@ const Product = () => {
   ));
   
   return (
-    <>
-      <h1>Product dashboard</h1>
+    <>      
       <div className="row">{cards}</div>
     </>
   );

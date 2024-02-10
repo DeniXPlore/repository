@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
-        <Navbar.Brand href="#">Product List</Navbar.Brand>
+        <Navbar.Brand >Product List:</Navbar.Brand>
         <Nav>
           <Nav.Link to="/" as={Link}>
             Products
