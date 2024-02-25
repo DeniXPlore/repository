@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { ordered as cakeOrdered } from "../cake/cakeSlice";
-import { cakeActions } from "../user/userSlice";
+// import { cakeActions } from "../user/userSlice";
 
 const initialState = {
   numOfIcecreams: 20,
