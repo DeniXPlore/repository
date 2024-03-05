@@ -1,6 +1,16 @@
+import { Row, Col } from "react-bootstrap";
+import storeItems from "../data/items.json";
+
 const Store = () => {
   return (
-    <div>Store</div>
-  )
-}
-export default Store
+    <>
+      <div>Store</div>
+      <Row md={2} xs={1} lg={3} className="g-3">
+        {storeItems.map((item) => (
+          <Col key={item.id}><StoreItem {...item}/> </Col>
+        ))}
+      </Row>
+    </>
+  );
+};
+export default Store;
