@@ -2,21 +2,23 @@ import { Button, Card } from "react-bootstrap";
 import formatCurrency from "../utilities/formatCurrency";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 
-type StoreItemsProps = {
-  id: number;
-  name: string;
-  price: number;
-  imgUrl: string;
-};
 
-const StoreItem = ({ id, name, price, imgUrl }: StoreItemsProps) => {
+type StoreItemProps = {
+  id: number
+  name: string
+  price: number
+  imgUrl: string
+}
+
+function StoreItem({ id, name, price, imgUrl }: StoreItemProps) {
   const {
     getItemQuantity,
     increaseCartQuantity,
     decreaseCartQuantity,
     removeFromCart,
-  } = useShoppingCart();
-  const quantity = getItemQuantity(id);
+  } = useShoppingCart()
+  const quantity = getItemQuantity(id)
+
   return (
     <Card className="h-100">
       <Card.Img
@@ -32,10 +34,12 @@ const StoreItem = ({ id, name, price, imgUrl }: StoreItemsProps) => {
         </Card.Title>
         <div className="mt-auto">
           {quantity === 0 ? (
-            <Button className="w-100" onClick={() => increaseCartQuantity(id)}> + Add To Cart</Button>
+            <Button className="w-100" onClick={() => increaseCartQuantity(id)}>
+              + Add To Cart
+            </Button>
           ) : (
             <div
-              className="d-flex align-items-center flex-item-center flex column"
+              className="d-flex align-items-center flex-column"
               style={{ gap: ".5rem" }}
             >
               <div
@@ -48,7 +52,11 @@ const StoreItem = ({ id, name, price, imgUrl }: StoreItemsProps) => {
                 </div>
                 <Button onClick={() => increaseCartQuantity(id)}>+</Button>
               </div>
-              <Button variant="danger" size="sm" onClick={() => removeFromCart(id)}>
+              <Button
+                onClick={() => removeFromCart(id)}
+                variant="danger"
+                size="sm"
+              >
                 Remove
               </Button>
             </div>
@@ -56,6 +64,7 @@ const StoreItem = ({ id, name, price, imgUrl }: StoreItemsProps) => {
         </div>
       </Card.Body>
     </Card>
-  );
-};
-export default StoreItem;
+  )
+}
+
+export default StoreItem
