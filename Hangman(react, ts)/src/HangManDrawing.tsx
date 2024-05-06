@@ -68,7 +68,11 @@ const LEFT_LEG = (
   }}/>
 )
 
-const HangManDrawing = () => {
+type HangManDrawingProps = {
+  numberOfGuesses: number
+}
+
+const HangManDrawing = ({numberOfGuesses}: HangManDrawingProps) => {
   return (
     <div style={{position: "relative"}}>
       {HEAD}
