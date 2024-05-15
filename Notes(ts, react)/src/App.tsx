@@ -3,6 +3,12 @@ import { Container } from "react-bootstrap";
 import { Routes, Route, Navigate } from "react-router";
 import NewNote from "./NewNote";
 
+type NodeData = {
+  title: string,
+  markdown: string,
+  tags: Tag[]
+}
+
 function App() {
   return (
     <Container className="my-4">
