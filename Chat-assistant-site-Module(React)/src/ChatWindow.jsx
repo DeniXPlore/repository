@@ -13,7 +13,7 @@ const ChatWindow = () => {
     setMessages([...messages, newMessage]);
 
     try {
-      const response = await fetch('YOUR_BACKEND_API_URL', {
+      const response = await fetch('BACKEND_URL', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -47,7 +47,7 @@ const ChatWindow = () => {
           <div className="chat-messages">
             {messages.map((msg, index) => (
               <div key={index} className={`chat-message ${msg.sender}`}>
-                {msg.text}
+                {msg.text}               
               </div>
             ))}
           </div>
