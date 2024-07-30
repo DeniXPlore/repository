@@ -1,3 +1,9 @@
+export type dataType = {
+  id: string
+  question: string
+  answer: string
+}
+
 const data = [
   {
     id  : '1',
