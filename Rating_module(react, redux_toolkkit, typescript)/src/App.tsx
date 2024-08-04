@@ -1,13 +1,13 @@
-import Rating from './Rating'
+import Rating from "./Rating";
+
 
 function App() {
   
-
   return (
     <>
-      <Rating/>
+      <Rating numberOfStars={10} />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
