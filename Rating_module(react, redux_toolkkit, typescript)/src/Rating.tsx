@@ -1,23 +1,28 @@
-import { useState } from "react";
 import { FaStar } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState, AppDispatch } from "./features/store";
+import { setRating, setHover } from "./features/ratingSlice";
+import "./index.css";
+
 type RatingProps = {
   numberOfStars: number;
 };
 
 const Rating = ({ numberOfStars }: RatingProps) => {
-  const [rating, setRating] = useState(0);
-  const [hover, setHover] = useState(0);
+  const dispatch = useDispatch<AppDispatch>();
+  const rating = useSelector((state: RootState) => state.rating.rating);
+  const hover = useSelector((state: RootState) => state.rating.hover);
 
   function handleClick(getCurrentIndex: number) {
-    setRating(getCurrentIndex);
+    dispatch(setRating(getCurrentIndex));
   }
 
   function handleMouseEnter(getCurrentIndex: number) {
-    setHover(getCurrentIndex);
+    dispatch(setHover(getCurrentIndex));
   }
 
   function handleMouseLeave() {
-    setHover(rating);
+    dispatch(setHover(rating));
   }
 
   return (
@@ -38,4 +43,5 @@ const Rating = ({ numberOfStars }: RatingProps) => {
     </div>
   );
 };
+
 export default Rating;
