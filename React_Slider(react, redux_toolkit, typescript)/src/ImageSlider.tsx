@@ -23,6 +23,12 @@ const ImageSlider = ({ url, limit = 5, page = 1 }) => {
     }
   }
 
+  function handlePrevios() {
+    setCurrentSlide(currentSlide === 0 ? images.length - 1 : currentSlide - 1);
+  }
+  function handleNext() {
+    setCurrentSlide(currentSlide === images.length - 1 ? 0 : currentSlide + 1);
+  }
   useEffect(() => {
     if (url !== "") fetchImages();
   }, [url]);
@@ -35,19 +41,45 @@ const ImageSlider = ({ url, limit = 5, page = 1 }) => {
 
   return (
     <div className="container">
-      <BsArrowLeftCircleFill className="arrow arrow-left" />
+      <BsArrowLeftCircleFill
+        onClick={handlePrevios()}
+        className="arrow arrow-left"
+      />
       {images && images.length
-        ? images.map((imageItem: { id: string; download_url: string }) => (
-            <img
-              key={imageItem.id}
-              src={imageItem.download_url}
-              className="current-image"
-              alt="image"
-            />
-          ))
+        ? images.map(
+            (imageItem: { id: string; download_url: string }, index) => (
+              <img
+                key={imageItem.id}
+                src={imageItem.download_url}
+                className={
+                  currentSlide === index
+                    ? "current-image"
+                    : "current-image hide-current-image"
+                }
+                alt="image"
+              />
+            )
+          )
         : null}
-      <BsArrowRightCircleFill className="arrow arrow-right" />
-      <span className="circle-indicators"></span>
+      <BsArrowRightCircleFill
+        onClick={handleNext()}
+        className="arrow arrow-right"
+      />
+      <span className="circle-indicators">
+        {images && images.length
+          ? images.map((_, index) => (
+              <button
+                key={index}
+                className={
+                  currentSlide === index
+                    ? "current-indicator"
+                    : "current-indicator inactive-indicator"
+                }
+                onClick={() => setCurrentSlide(index)}
+              />
+            ))
+          : null}
+      </span>
     </div>
   );
 };
