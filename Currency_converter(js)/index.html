@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency_converter</title>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+    <h1>Currency converter</h1>
+    <div>
+        <div class="main">
+            <div>
+                <label for="amount">Sum:</label>
+                <input type="text" class ="searchBox" placeholder="0.00" id="amount">
+            </div>
+            <div >
+                <span>From</span>
+                <select class="from" id="sell">
+                    <option value="">Choose currency</option>
+                    <option value="USD">USD</option>
+                    <option value="RUB">RUB</option>
+                    <option value="KZT">KZT</option>
+                    <option value="TRY">TRY</option>
+                </select>                
+            </div>
+            <div >
+                <span>To</span>
+                <select class="to" id="sell2">
+                    <option value="">Choose currency</option>
+                    <option value="USD">USD</option>
+                    <option value="RUB">RUB</option>
+                    <option value="KZT">KZT</option>
+                    <option value="TRY">TRY</option>
+                </select>                
+            </div>
+            <div>
+               <button class="btn convert" type="submit">Convert</button>               
+            </div>  
+        </div>
+        <div id="finalAmount">
+            <h2>Currency sum: <span class="finalValue"></span></h2>
+        </div>
+    </div>
+    <script src="./script.js"></script>    
+</body>
+
+</html>
