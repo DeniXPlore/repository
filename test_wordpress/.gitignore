@@ -1,0 +1,27 @@
+# WordPress core files
+/wp-admin/
+/wp-includes/
+
+# Configuration files
+wp-config.php
+
+# Uploads
+/wp-content/uploads/
+
+# Cache and backups
+/wp-content/cache/
+/wp-content/backups/
+
+# Log files
+logs/
+/*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Others
+
+*.zip
+*.tar.gz
+*.tgz
