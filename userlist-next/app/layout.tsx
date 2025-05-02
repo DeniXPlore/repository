@@ -12,7 +12,11 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>{children}</body>
+      <body>
+        <nav>
+          <h1>My NavBar</h1>
+        </nav>
+        {children}</body>
     </html>
   )
 }
