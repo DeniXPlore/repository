@@ -1,5 +1,4 @@
 import getAllUsers from "@/lib/getAllUsers";
-
 import type { Metadata } from "next";
 import Link from "next/link";
 
