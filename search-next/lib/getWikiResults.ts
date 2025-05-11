@@ -7,7 +7,7 @@ export default async function getWikiResults(searchTerm: string) {
     prop: 'pageimages|extracts',
     exchars: '100',
     exintro: 'true',
-    explaintest: 'true',
+    explaintext: 'true',
     exlimit: 'max',
     format: 'json',
     origin: '*',
@@ -15,3 +15,4 @@ export default async function getWikiResults(searchTerm: string) {
  const response = await fetch('https://en.wikipedia.org/w/api.php?' + searchParams)
   return response.json()
 }
+
